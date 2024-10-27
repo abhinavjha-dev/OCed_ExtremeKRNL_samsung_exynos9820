@@ -2,6 +2,8 @@
 
 ## Features
 
+- Overclocked to 3/2.4/2.1 GHz
+- Underclocked to 520/377/182 MHz
 - TBD
 
 ## Supported devices:
