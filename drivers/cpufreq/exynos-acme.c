@@ -1083,6 +1083,8 @@ static __init int init_table(struct exynos_cpufreq_domain *domain)
 
 				dev_pm_opp_add(get_cpu_device(cpu),
 						table[index] * 1000, volt_table[index]);
+				// Print the frequency and voltage for each CPU
+        			pr_info("CPU %d: Frequency = %lu, Voltage = %u\n", cpu, table[index], volt_table[index]);
 			}
 		}
 
@@ -1310,7 +1312,7 @@ static int init_dm(struct exynos_cpufreq_domain *domain,
 }
 
 /*Underclocking little cores to 182MHz*/
-static unsigned long arg_cpu_min_c1 = 182000; 
+static unsigned long arg_cpu_min_c1 = 120000; 
 static int __init cpufreq_read_cpu_min_c1(char *cpu_min_c1) /*integer remains in memory after function call*/
 {
 	unsigned long ui_khz;
@@ -1368,7 +1370,7 @@ __setup("cpu_min_c3=", cpufreq_read_cpu_min_c3);
 
 /*Chatur, Carlos Burero & physwizz*/
 /*Overclocking little cores to 2.1 GHz*/
-static unsigned long arg_cpu_max_c1 = 2200000; 
+static unsigned long arg_cpu_max_c1 = 2050000; 
 
 static int __init cpufreq_read_cpu_max_c1(char *cpu_max_c1) /*integer remains in memory after function call*/
 {
@@ -1405,7 +1407,7 @@ __setup("cpu_max_c2=", cpufreq_read_cpu_max_c2);
 
 
 /*Overclocking big cores to 3GHz*/
-unsigned long arg_cpu_max_c3 = 3250000; /*max_cpu_freq=3.016 GHz*/
+unsigned long arg_cpu_max_c3 = 2950000; /*max_cpu_freq=3.016 GHz*/
 
 static __init int cpufreq_read_cpu_max_c3(char *cpu_max_c3)
 {
