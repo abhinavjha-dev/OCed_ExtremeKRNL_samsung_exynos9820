@@ -1,9 +1,10 @@
-# ExtremeKernel for Exynos 9820 devices
+# OCed_ExtremeKernel for Exynos 9820 devices
 
 ## Features
 
-- Overclocked to 3/2.4/2.1 GHz
-- Underclocked to 520/377/182 MHz
+- Overclocked to 2.9/2.4/2.0 GHz
+- Underclocked to 520/377/130 MHz
+- Schedutil Boosting behaviour tweaked for better performance
 - TBD
 
 ## Supported devices:
